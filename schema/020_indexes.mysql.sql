@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-mysql.psd1 (map@734a489)
+-- Auto-generated from schema-map-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  kms_health_checks
 CREATE INDEX idx_kms_hc_provider_time ON kms_health_checks (provider_id, checked_at);

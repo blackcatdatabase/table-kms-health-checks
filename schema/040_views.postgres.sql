@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  kms_health_checks_latest
 -- Latest health sample per provider/key
@@ -8,7 +8,7 @@ SELECT DISTINCT ON (COALESCE(kms_key_id,-1), COALESCE(provider_id,-1))
 FROM kms_health_checks
 ORDER BY COALESCE(kms_key_id,-1), COALESCE(provider_id,-1), checked_at DESC;
 
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  kms_health_checks
 -- Contract view for [kms_health_checks]
