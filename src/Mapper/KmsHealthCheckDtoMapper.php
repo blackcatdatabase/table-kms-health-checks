@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class KmsHealthCheckDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'provider_id' => 'providerId', 'kms_key_id' => 'kmsKeyId', 'latency_ms' => 'latencyMs', 'checked_at' => 'checkedAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'provider_id' => 'providerId', 'kms_key_id' => 'kmsKeyId', 'status' => 'status', 'latency_ms' => 'latencyMs', 'error' => 'error', 'checked_at' => 'checkedAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
