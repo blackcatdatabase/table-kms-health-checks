@@ -1,7 +1,7 @@
--- Auto-generated from joins-mysql.psd1 (map@mtime:2025-11-27T17:49:37Z)
+-- Auto-generated from joins-mysql.yaml (map@94ebe6c)
 -- engine: mysql
--- view:   kms_health_checks_latest
--- Latest health sample per provider/key
+-- view:   kms_health_latest
+
 CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_kms_health_latest AS
 WITH ranked AS (
   SELECT
@@ -27,5 +27,4 @@ SELECT
   error,
   checked_at
 FROM ranked
-WHERE rn = 1
-;
+WHERE rn = 1;
