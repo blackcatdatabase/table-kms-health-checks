@@ -1,6 +1,6 @@
 -- Auto-generated from joins-postgres.yaml (map@85230ed)
 -- engine: postgres
--- view:   kms_health_checks_latest
+-- view:   kms_health_latest
 
 -- Latest health sample per provider/key
 CREATE OR REPLACE VIEW vw_kms_health_latest AS
