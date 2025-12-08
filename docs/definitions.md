@@ -6,12 +6,12 @@ Periodic health probes for KMS providers/keys.
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | error | TEXT | YES |  | Error string when degraded/down. |
-| checked_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp of the check (UTC). |
+| checked_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp of the check (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| kms_key_id |  | YES |  | Specific key being checked (FK kms_keys.id), optional. |
-| latency_ms | INTEGER | YES |  | Measured latency in milliseconds. |
+| kms_key_id | BIGINT | YES |  | Specific key being checked (FK kms_keys.id), optional. |
+| latency_ms | INT | YES |  | Measured latency in milliseconds. |
 | provider_id | BIGINT | YES |  | KMS provider being checked (FK kms_providers.id). |
-| status | TEXT | NO |  | Probe result. (enum: up, degraded, down) |
+| status | ENUM('up','degraded','down') | NO |  | Probe result. (enum: up, degraded, down) |
 
 ## Engine Details
 
@@ -48,7 +48,7 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_kms_health_checks | mysql | algorithm=MERGE, security=INVOKER | [packages\kms-health-checks\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-health-checks/schema/040_views.mysql.sql) |
-| vw_kms_health_latest | mysql | algorithm=MERGE, security=INVOKER | [packages\kms-health-checks\schema\040_views_joins.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-health-checks/schema/040_views_joins.mysql.sql) |
-| vw_kms_health_checks | postgres |  | [packages\kms-health-checks\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-health-checks/schema/040_views.postgres.sql) |
-| vw_kms_health_latest | postgres |  | [packages\kms-health-checks\schema\040_views_joins.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/kms-health-checks/schema/040_views_joins.postgres.sql) |
+| vw_kms_health_checks | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_kms_health_latest | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views_joins.mysql.sql](schema\040_views_joins.mysql.sql) |
+| vw_kms_health_checks | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_kms_health_latest | postgres |  | [schema\040_views_joins.postgres.sql](schema\040_views_joins.postgres.sql) |
