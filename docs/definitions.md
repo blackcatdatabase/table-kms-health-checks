@@ -6,12 +6,12 @@ Periodic health probes for KMS providers/keys.
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | error | TEXT | YES |  | Error string when degraded/down. |
-| checked_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp of the check (UTC). |
+| checked_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp of the check (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | kms_key_id | BIGINT | YES |  | Specific key being checked (FK kms_keys.id), optional. |
-| latency_ms | INT | YES |  | Measured latency in milliseconds. |
+| latency_ms | mysql: INT / postgres: INTEGER | YES |  | Measured latency in milliseconds. |
 | provider_id | BIGINT | YES |  | KMS provider being checked (FK kms_providers.id). |
-| status | ENUM('up','degraded','down') | NO |  | Probe result. (enum: up, degraded, down) |
+| status | mysql: ENUM('up','degraded','down') / postgres: TEXT | NO |  | Probe result. (enum: up, degraded, down) |
 
 ## Engine Details
 
