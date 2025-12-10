@@ -5,8 +5,8 @@ Periodic health probes for KMS providers/keys.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| error | TEXT | YES |  | Error string when degraded/down. |
 | checked_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp of the check (UTC). |
+| error | TEXT | YES |  | Error string when degraded/down. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | kms_key_id | BIGINT | YES |  | Specific key being checked (FK kms_keys.id), optional. |
 | latency_ms | mysql: INT / postgres: INTEGER | YES |  | Measured latency in milliseconds. |
