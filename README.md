@@ -17,7 +17,7 @@
 | What | Link | Notes |
 | --- | --- | --- |
 | Schema map | [schema-map-postgres.yaml](https://github.com/blackcatacademy/blackcat-database/blob/main/scripts/schema/schema-map-postgres.yaml) | Source for table metadata |
-| Pkg folder | [packages\kms-health-checks](https://github.com/blackcatacademy/blackcat-database/blob/main/packages\kms-health-checks) | Repo location |
+| Pkg folder | [packages\kms-health-checks](https://github.com/blackcatacademy/blackcat-database/blob/main/packages/kms-health-checks) | Repo location |
 | Definitions | [docs/definitions.md](docs/definitions.md) | Column/index/FK docs |
 | Engine differences | [docs/definitions.md#engine-differences](docs/definitions.md#engine-differences) | Drift section in definitions |
 | Changelog | [CHANGELOG.md](CHANGELOG.md) | Recent changes |
@@ -98,8 +98,8 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `checked_at` – default=CURRENT_TIMESTAMP(6), check
 - `status` – enum
+- `checked_at` – default=CURRENT_TIMESTAMP(6), check
 
 ## Schema Files
 | File | Engine |
