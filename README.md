@@ -98,8 +98,8 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `status` – enum
 - `checked_at` – default=CURRENT_TIMESTAMP(6), check
+- `status` – enum
 
 ## Schema Files
 | File | Engine |
