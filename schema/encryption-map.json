@@ -2,10 +2,10 @@
   "tables": {
     "kms_health_checks": {
       "columns": {
-        "error": {
+        "checked_at": {
           "strategy": "passthrough"
         },
-        "checked_at": {
+        "error": {
           "strategy": "passthrough"
         },
         "id": {
