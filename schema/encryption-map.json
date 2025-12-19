@@ -1,0 +1,29 @@
+{
+  "tables": {
+    "kms_health_checks": {
+      "columns": {
+        "checked_at": {
+          "strategy": "passthrough"
+        },
+        "error": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "kms_key_id": {
+          "strategy": "passthrough"
+        },
+        "latency_ms": {
+          "strategy": "passthrough"
+        },
+        "provider_id": {
+          "strategy": "passthrough"
+        },
+        "status": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
